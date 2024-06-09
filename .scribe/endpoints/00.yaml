@@ -1,0 +1,256 @@
+name: Comment
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/comments
+    metadata:
+      groupName: Comment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'page[number]':
+        name: 'page[number]'
+        description: 'Customizing the URI paginator.'
+        required: false
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'page[size]':
+        name: 'page[size]'
+        description: 'Adjusting the amount of data displayed.'
+        required: false
+        example: '2'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sort:
+        name: sort
+        description: 'Sort data ( key_name / -key_name ), default -created_at.'
+        required: false
+        example: created_at
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'filter[created_at]':
+        name: 'filter[created_at]'
+        description: 'Sorting by date created.'
+        required: false
+        example: '2020-12-24'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanQueryParameters:
+      'page[number]': '1'
+      'page[size]': '2'
+      sort: created_at
+      'filter[created_at]': '2020-12-24'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[],"links":{"first":"http:\/\/save-comment.test\/api\/comments?page%5Bsize%5D=2&sort=created_at&filter%5Bcreated_at%5D=2020-12-24&page%5Bnumber%5D=1","last":"http:\/\/save-comment.test\/api\/comments?page%5Bsize%5D=2&sort=created_at&filter%5Bcreated_at%5D=2020-12-24&page%5Bnumber%5D=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/save-comment.test\/api\/comments?page%5Bsize%5D=2&sort=created_at&filter%5Bcreated_at%5D=2020-12-24&page%5Bnumber%5D=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/save-comment.test\/api\/comments","per_page":30,"to":null,"total":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/comments
+    metadata:
+      groupName: Comment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store Comment.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: provident
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      comment:
+        name: comment
+        description: ''
+        required: true
+        example: similique
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: provident
+      comment: similique
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/comments/{comment_id}'
+    metadata:
+      groupName: Comment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Comment.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: en
+    urlParameters:
+      comment_id:
+        name: comment_id
+        description: 'The ID of the comment.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      Comment:
+        name: Comment
+        description: "valid id Comment. Defaults to 'id'."
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      comment_id: 16
+      Comment: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: eius
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      comment:
+        name: comment
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: eius
+      comment: voluptas
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/comments/{comment_id}'
+    metadata:
+      groupName: Comment
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Comment.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: en
+    urlParameters:
+      comment_id:
+        name: comment_id
+        description: 'The ID of the comment.'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      Comment:
+        name: Comment
+        description: "valid id Comment. Defaults to 'id'."
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      comment_id: 6
+      Comment: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
